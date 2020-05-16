@@ -10,16 +10,14 @@ namespace Laboratorio6
     public class Departamento:Division
     {
         string namedepartment;
-        List<Area> areas;
+        List<Seccion> secciones;
 
         public Departamento(string Namedepartment): base(Namedepartment)
         {
             namedepartment = Namedepartment;
-            Areas = new List<Area>();
+            Secciones = new List<Seccion>();
         }
 
-        public List<Area> Areas { get => areas; set => areas = value; }
-
-        
+        public List<Seccion> Secciones { get => secciones; set => secciones = value; }
     }
 }

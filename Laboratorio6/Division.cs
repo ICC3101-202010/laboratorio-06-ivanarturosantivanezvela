@@ -31,6 +31,7 @@ namespace Laboratorio6
         public string Getdivisiones()
         {
             string resultado = $"[{this.GetType().Name}] {Namedivision}\n";
+            Console.WriteLine(Namedivision);
 
             resultado += $"\tEncargado: {Personaencargada.Name}\n";
             resultado += "\tTrabajadores:";
@@ -40,7 +41,8 @@ namespace Laboratorio6
                 resultado += $"\n\t\t{trabajador.Name} - {trabajador.Cargo}";
             }
 
-            return resultado;
+            return resultado; 
+
         }
 
     }

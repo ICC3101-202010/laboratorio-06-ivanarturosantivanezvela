@@ -21,7 +21,8 @@ namespace Laboratorio6
                 {
                     case "1":
                         try
-                        {   
+                        {
+                            Console.WriteLine("Leyendo empresa.bin");
                             Empresa.Deserializar("empresa.bin").Empresainformacion();
 
                             
@@ -41,7 +42,7 @@ namespace Laboratorio6
 
                         Console.WriteLine("Escriba el nombre de la empresa");
                         string nombre = Console.ReadLine();
-                        Console.WriteLine("Escriba el rut de la empres");
+                        Console.WriteLine("Escriba el rut de la empresa");
                         int rut = Convert.ToInt32(Console.ReadLine());
                         Empresa empresa = new Empresa(nombre, rut);
 
@@ -49,19 +50,19 @@ namespace Laboratorio6
                         area.Personaencargada = new Persona("Juan", "Perez", 193242006, "Gerente");
                         area.Listadepersonas.Add(new Persona("Ivan", "Santivanez", 19078504, "Consejero"));
 
-                       
+                        
 
                         Departamento departamento = new Departamento("Cuentas nacionales");
                         departamento.Personaencargada = new Persona("Diana", "Lopez", 14572216, "Jefe");
                         departamento.Listadepersonas.Add(new Persona("Pamela", "Vela", 14485792, "Senior"));
 
-                        
+                        area.Departamentos.Add(departamento);
 
                         Seccion seccion = new Seccion("Gobierno");
                         seccion.Personaencargada = new Persona("Agustin", "Fernandez", 19322466, "Jefe");
                         seccion.Listadepersonas.Add(new Persona("James", "Mcgil", 14078905, "Coordinador"));
 
-                        
+                        departamento.Secciones.Add(seccion);
 
                         Bloque bloque1 = new Bloque("Gobierno municipal");
                         bloque1.Personaencargada = new Persona("Diego", "Aviles", 145728, "Ayudante");
@@ -70,6 +71,9 @@ namespace Laboratorio6
                         Bloque bloque2 = new Bloque("Gobierno general");
                         bloque2.Personaencargada = new Persona("Javier", "Gonzalez", 1324458, "Ayudante");
                         bloque2.Listadepersonas.Add(new Persona("Kim", "Waxler", 1234565, "Digitador"));
+
+                        seccion.Bloques.Add(bloque1);
+                        seccion.Bloques.Add(bloque2);
 
                         empresa.Divisiones.Add(area);
                         empresa.Divisiones.Add(departamento);
